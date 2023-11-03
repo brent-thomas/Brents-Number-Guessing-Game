@@ -25,13 +25,15 @@ def check_guess(guess, solution):
             return "It's lower"
         elif guess < solution:
             return "It's higher"
+        else:
+            return "Correct!"
     else:
         return "Uh oh, that's outside the range. The secret number is between 1 and 100. Try again."
     
 #Display end of game message, disply score statistics, and prompt player to play again
 def end_of_game_sequence(solution,number_of_attempts,scores):
         print('*' * 36)
-        print(f"\nBe you angels!? You got it! The correct number was {solution}\n")
+        print(f"\nBe you angels!? You got it! The correct number was {solution}.\n")
         print(f"You got it right in {number_of_attempts} attempts")
         print("\nHigh Score Statistics:\n")
         print(f'Mean: {statistics.mean(scores)}')
