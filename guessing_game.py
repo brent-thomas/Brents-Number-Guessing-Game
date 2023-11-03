@@ -33,15 +33,13 @@ def end_of_game_sequence(solution,number_of_attempts,scores):
         print('*' * 36)
         print(f"\nBe you angels!? You got it! The correct number was {solution}\n")
         print(f"You got it right in {number_of_attempts} attempts")
+        print("\nHigh Score Statistics:\n")
         print(f'Mean: {statistics.mean(scores)}')
         print(f'Median: {statistics.median(scores)}')
         print(f'Mode: {statistics.mode(scores)}')
         print()
         print('*' * 36)
         return input("Would you like to play again? [Y/N] ")
-
-
-
 
 def start_game():
     welcome_message()
@@ -60,18 +58,8 @@ def start_game():
             except ValueError:
                 print("Please enter a valid whole number")
         scores.append(number_of_attempts)
-        # print()
-        # print('*' * 36)
-        # print(f"\nBe you angels!? You got it! The correct number was {solution}\n")
-        # print(f"You got it right in {number_of_attempts} attempts")
-        # print(f'Mean: {statistics.mean(scores)}')
-        # print(f'Median: {statistics.median(scores)}')
-        # print(f'Mode: {statistics.mode(scores)}')
-        # print()
-        # print('*' * 36)
         play_again = end_of_game_sequence(solution,number_of_attempts,scores)
         if play_again.upper() == 'Y':
-          
             print("\nGreat! I've picked a new number.How many attempts will it take you this time?\n")
             continue
         else:
